@@ -13,8 +13,6 @@ type dirTreeWriter struct {
 	tabs   []bool
 }
 
-func (dw *dirTreeWriter) SetTabs(t []bool) { dw.tabs = t }
-
 func (dw dirTreeWriter) Write(p []byte) (n int, err error) {
 	_, _ = dw.writer.Write([]byte(dw.GetTabs()))
 	return dw.writer.Write(p)
